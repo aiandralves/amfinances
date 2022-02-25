@@ -15,11 +15,17 @@
 }
 
 .bread-info {
+    li {
+        display: inline-block;
+        margin: 0 0.5rem;
+    }
+
     h3 {
         color: var(--color-main);
         font-size: var(--font-normal);
         font-weight: 500;
         margin: 0;
+        display: inline-block;
 
         i {
             font-size: 1.3rem;

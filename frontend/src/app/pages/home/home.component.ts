@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StatementController } from 'src/app/controllers/statements.controles';
+import { BreadcrumbService } from 'src/app/services/breadcrumb.service';
 
 @Component({
     selector: 'app-home',
@@ -9,10 +10,22 @@ import { StatementController } from 'src/app/controllers/statements.controles';
 export class HomeComponent implements OnInit {
     homeData: any;
 
-    constructor(private statementController: StatementController) {}
+    constructor(
+        private statementController: StatementController,
+        private breadcrumbService: BreadcrumbService
+    ) {}
 
     ngOnInit(): void {
         this.mountHome();
+        this.breadcrumb();
+    }
+
+    breadcrumb() {
+        this.breadcrumbService.breadcrumb = {
+            title: 'Seja Bem-Vindo!',
+            icon: 'bxs-smile',
+            link: 'painel/home',
+        };
     }
 
     private async mountHome() {

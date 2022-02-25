@@ -5,6 +5,7 @@ import { DetailComponent } from 'src/app/components/detail/detail.component';
 import { ModalComponent } from 'src/app/components/modal/modal.component';
 import { StatementController } from 'src/app/controllers/statements.controles';
 import { Statement } from 'src/app/models/Statement';
+import { BreadcrumbService } from 'src/app/services/breadcrumb.service';
 import { UtilsService } from 'src/app/utils/utils.service';
 
 @Component({
@@ -19,10 +20,21 @@ export class AccountComponent implements OnInit, AfterViewInit {
     constructor(
         private modal: MatDialog,
         private statementController: StatementController,
-        private toast: UtilsService
+        private toast: UtilsService,
+        private breadcrumbService: BreadcrumbService
     ) {}
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        this.breadcrumb();
+    }
+
+    breadcrumb() {
+        this.breadcrumbService.breadcrumb = {
+            title: 'Transações',
+            icon: 'bx-money',
+            link: 'painel/conta',
+        };
+    }
 
     ngAfterViewInit(): void {
         this.findBalance();

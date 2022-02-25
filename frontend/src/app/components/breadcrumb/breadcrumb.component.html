@@ -1,10 +1,23 @@
 <div class="breadcrumb">
     <ul class="bread-info">
         <li>
-            <h3>
-                <i class='bx bxs-smile'></i>
-                Seja Bem Vindo!
-            </h3>
+            <a routerLink="painel/home">
+                <h3>
+                    <i class='bx bxs-dashboard'></i>
+                    Início
+                </h3>
+            </a>
+        </li><!-- end col -->
+        <li>
+            <h3>/</h3>
+        </li>
+        <li>
+            <a routerLink="{{ link }}">
+                <h3>
+                    <i class='bx {{ icon }}'></i>
+                    {{ title }}
+                </h3>
+            </a>
         </li><!-- end col -->
     </ul>
 </div>
