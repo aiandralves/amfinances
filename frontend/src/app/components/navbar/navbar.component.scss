@@ -1,0 +1,40 @@
+/***---------- Variables ----------***/
+@import 'variables';
+
+mat-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--color-main);
+    color: var(--color-white);
+}
+
+.menu-icon {
+    font-size: 1.25rem;
+}
+
+.user {
+    font-size: var(--font-small);
+
+    .user-img {
+        border-radius: 50%;
+        width: 3.125rem;
+        height: 3.125rem;
+
+        .user-icon {
+            height: 1.125rem;
+            font-size: 1rem;
+        }
+    }
+}
+
+.btn-logout i {
+    font-size: 1rem;
+    vertical-align: middle;
+}
+
+::ng-deep {
+    .mat-menu-content {
+        width: 10rem;
+    }
+}

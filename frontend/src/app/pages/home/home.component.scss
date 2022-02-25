@@ -1,0 +1,123 @@
+/***---------- Variables ----------***/
+@import 'variables';
+
+/***---------- Card ----------***/
+.content {
+    padding: 1rem;
+    display: block;
+    width: 100%;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    margin-top: 1.5rem;
+    width: 100%;
+
+    .card-item {
+        display: flex;
+        justify-content: space-between;
+        background: var(--color-white);
+        padding: 2rem;
+        border-radius: 4px;
+
+        .card-info {
+            display: block;
+
+            h3 {
+                font-size: var(--font-h2);
+                color: var(--color-title);
+                font-weight: 600;
+                margin-bottom: 1rem;
+            }
+
+            span {
+                color: var(--color-main);
+                font-weight: 600;
+            }
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            width: 2.5rem;
+        }
+
+        .color-danger {
+            color: #e92929;
+        }
+
+        .color-green {
+            color: #49aa26;
+        }
+    }
+}
+
+/***---------- Transaction ----------***/
+.transaction {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+
+    h2 {
+        margin: 2rem 0;
+        font-size: var(--font-h3);
+        font-weight: 600;
+    }
+}
+
+#data-table {
+    width: 100%;
+    min-width: 550px;
+    border-spacing: 0 0.5rem;
+    color: var(--color-text);
+    border-collapse: initial !important;
+}
+
+table thead tr th:first-child,
+table thead tr td:first-child {
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+
+table thead tr th:last-child,
+table thead tr td:last-child {
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+
+table thead th {
+    background: var(--color-white);
+    font-weight: 600;
+    padding: 1rem 2rem;
+    text-align: left;
+    color: var(--color-title);
+}
+
+table tbody td {
+    background: var(--color-white);
+    padding: 0.8rem;
+    font-weight: normal;
+    color: var(--color-text);
+}
+
+table tbody tr:hover {
+    opacity: 1;
+}
+
+/**----------- Media Queries -----------**/
+@media screen and (min-width: 800px) {
+    table tbody td {
+        padding: 1rem 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card-container {
+        grid-template-columns: 100%;
+    }
+}

@@ -1,0 +1,90 @@
+/***---------- Variables ----------***/
+@import 'variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-main);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-size: var(--font-normal);
+    font-weight: 500;
+}
+
+a,
+a:hover {
+    text-decoration: none !important;
+}
+
+ul {
+    margin: 0;
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button,
+input,
+textarea {
+    border: none;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+/**------------ Base -----------**/
+.alert-success {
+    background: var(--color-green) !important;
+    color: #fff;
+}
+
+.alert-error {
+    background: var(--color-danger) !important;
+    color: #fff;
+}
+
+/**----------- Button ----------**/
+.button {
+    padding: 1rem 2rem;
+    border-radius: 0.25rem;
+    font-size: var(--font-small);
+    font-weight: 600;
+    transition: 0.4s;
+
+    &.bg-red {
+        border: 2px solid var(--color-danger);
+        color: var(--color-danger);
+
+        &:hover {
+            background: var(--color-danger);
+            color: #fff;
+        }
+    }
+
+    &.bg-green {
+        border: 2px solid var(--color-green);
+        color: var(--color-green);
+
+        &:hover {
+            background: var(--color-green);
+            color: #fff;
+        }
+    }
+}

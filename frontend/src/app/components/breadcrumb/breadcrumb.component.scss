@@ -1,0 +1,30 @@
+/***---------- Variables ----------***/
+@import 'variables';
+
+.breadcrumb {
+    position: relative;
+    padding: 1.5rem 0 1.5rem 2.5rem;
+    background: var(--color-white);
+    box-shadow: none !important;
+    border-radius: 2px;
+    margin-bottom: 0;
+
+    ul {
+        margin-bottom: 0;
+    }
+}
+
+.bread-info {
+    h3 {
+        color: var(--color-main);
+        font-size: var(--font-normal);
+        font-weight: 500;
+        margin: 0;
+
+        i {
+            font-size: 1.3rem;
+            vertical-align: text-top;
+            color: var(--color-main);
+        }
+    }
+}

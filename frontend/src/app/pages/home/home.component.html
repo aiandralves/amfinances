@@ -1,0 +1,33 @@
+<mat-card-content class="content">
+    <div class="card-container">
+        <div class="card-item">
+            <div class="card-info">
+                <h3>R$ {{ homeData.deposits }} </h3>
+                <span>Entradas</span>
+            </div>
+            <div class="card-icon">
+                <i class='bx bx-up-arrow-circle color-green'></i>
+            </div>
+        </div>
+
+        <div class="card-item">
+            <div class="card-info">
+                <h3>R$ {{ homeData.withdraws }}</h3>
+                <span>Saídas</span>
+            </div>
+            <div class="card-icon">
+                <i class='bx bx-down-arrow-circle color-danger'></i>
+            </div>
+        </div>
+
+        <div class="card-item">
+            <div class="card-info">
+                <h3>R$ {{ homeData.balance }}</h3>
+                <span>Total</span>
+            </div>
+            <div class="card-icon">
+                <i class='bx bx-dollar-circle'></i>
+            </div>
+        </div>
+    </div><!-- end card -->
+</mat-card-content>

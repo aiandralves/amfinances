@@ -1,0 +1,27 @@
+<mat-toolbar>
+    <mat-toolbar-row class="justify-content-between">
+        <button mat-icon-button (click)="toggleSidebar()">
+            <i class='bx bx-menu menu-icon'></i>
+        </button>
+
+        <div class="row mr-2 ml-auto">
+            <ul class="col-lg-12 m-0 align-items-center">
+                <li>
+                    <button mat-button [matMenuTriggerFor]="menu" class="user d-flex align-items-center">
+                        <img src="assets/img/avatar.jpg" alt="" class="user-img p-2" />
+                        {{ name }}
+
+                        <i class='bx bx-chevron-down user-icon ml-1'></i>
+                    </button>
+
+                    <mat-menu #menu="matMenu">
+                        <button class="btn-logout" (click)="logout()" mat-menu-item>
+                            <i class='bx bx-log-in-circle mr-1'></i>
+                            Logout
+                        </button>
+                    </mat-menu>
+                </li>
+            </ul>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

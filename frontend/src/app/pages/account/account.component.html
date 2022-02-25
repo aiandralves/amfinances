@@ -1,0 +1,36 @@
+<mat-card-content class="content">
+    <div class="transaction" id="transaction">
+        <h2 class="title">Transações</h2>
+
+        <button class="button bg-green mr-3" (click)="openModalDeposit()">
+            Depósito
+        </button>
+
+        <button class="button bg-red" (click)="openModalWithdraw()">
+            Saque
+        </button>
+
+        <table class="mt-4" id="data-table">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Valor</th>
+                    <th>Tipo</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="balance">
+                <tr *ngFor="let b of balance">
+                    <td>{{ b.title }}</td>
+                    <td>R$ {{ b.amount }}</td>
+                    <td>{{ b.type }}</td>
+                    <td>
+                        <button class="mr-3 btn-details">
+                            <i class='bx bx-info-circle'></i> Detalhes
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</mat-card-content>

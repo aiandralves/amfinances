@@ -1,0 +1,23 @@
+/***---------- Variables ----------***/
+@import 'variables';
+
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+mat-drawer-container {
+    height: 100%;
+    background: var(--color-body);
+}
+
+mat-drawer {
+    width: 15rem;
+    background: var(--color-dark);
+}
+
+.content {
+    flex: 1 0 auto;
+    padding: 1.875rem 1.75rem;
+}

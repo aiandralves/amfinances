@@ -1,0 +1,33 @@
+<section class="login">
+    <div class="login-content">
+        <div class="login-img">
+            <img src="assets/img/login.svg" alt="login">
+        </div>
+
+        <div class="login-container">
+            <form [formGroup]="formGroup" class="login-form">
+                <h1 class="login-title">Fazer Login</h1>
+
+                <div class="login-box">
+                    <i class="bx bx-user login-icon"></i>
+                    <input required formControlName="cpf" type="text" placeholder="CPF" class="login-input">
+                </div>
+
+                <div class="login-box">
+                    <i class="bx bx-lock login-icon"></i>
+                    <input required formControlName="password" type="password" placeholder="Password"
+                        class="login-input">
+                </div>
+
+                <button (click)="login()" type="submit" class="login-btn">Acessar</button>
+
+                <div>
+                    <span class="login-acctount">
+                        Não possui conta ainda?
+                        <a routerLink="/cadastrar">Cadastre-se</a>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

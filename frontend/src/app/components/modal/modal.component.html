@@ -1,0 +1,26 @@
+<div class="modal-main">
+    <div class="modal-container">
+        <h2 class="modal-title">{{ title }}</h2>
+
+        <div class="modal-content">
+            <form class="modal-form" [formGroup]='formGroup'>
+                <div class="form-box">
+                    <input formControlName="title" type="text" class="form-input" placeholder="Titulo">
+                </div>
+                <div class="form-box">
+                    <input formControlName="amount" type="number" class="form-input" placeholder="Valor">
+                </div>
+                <div class="modal-footer mt-3">
+                    <button mat-dialog-close class="button bg-red">
+                        Cancelar
+                    </button>
+
+                    <button [mat-dialog-close]="true" class="button bg-green"
+                        (click)="operation(statementController, buildStatement())">
+                        {{ btnTitle }}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
