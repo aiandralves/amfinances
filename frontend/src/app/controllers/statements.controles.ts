@@ -37,9 +37,9 @@ export class StatementController {
             });
     }
 
-    async operation(idaccount: string): Promise<Statement> {
+    async findStatement(id: string | null): Promise<Statement> {
         return this.http
-            .get<Statement>(`${this.api}/statement/${idaccount}`)
+            .get<Statement>(`${this.api}/statement/${id}`)
             .toPromise()
             .then((data) => {
                 return data;

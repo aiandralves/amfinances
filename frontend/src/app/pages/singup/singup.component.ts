@@ -15,7 +15,7 @@ export class SingupComponent implements OnInit {
     formGroup: FormGroup;
 
     constructor(
-        private controller: AuthController,
+        private authController: AuthController,
         private router: Router,
         private utils: UtilsService
     ) {}
@@ -44,7 +44,7 @@ export class SingupComponent implements OnInit {
     async createAccount() {
         try {
             let account: Account = <Account>this.formGroup.value;
-            await this.controller.create(account);
+            await this.authController.create(account);
             this.utils.toast('Usuário cadastrado com sucesso!');
             this.router.navigate(['/login']);
         } catch (error: any) {

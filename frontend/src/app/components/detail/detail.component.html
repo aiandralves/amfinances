@@ -1,0 +1,36 @@
+<div class="modal-main">
+    <div class="modal-container">
+        <h2 class="modal-title">Detalhe do Extrado</h2>
+
+        <div class="modal-content">
+            <div class="modal-detail">
+                <div class="modal-item">
+                    <h5>Id</h5>
+                    <span>{{ statement.id }}</span>
+                </div>
+                <div class="modal-item">
+                    <h5>Name</h5>
+                    <!-- <span>{{ statement.account.name }}</span> -->
+                </div>
+                <div class="modal-item">
+                    <h5>Titulo</h5>
+                    <span>{{ statement.title }}</span>
+                </div>
+                <div class="modal-item">
+                    <h5>Valor</h5>
+                    <span>R$ {{ statement.amount }}</span>
+                </div>
+                <div class="modal-item">
+                    <h5>Tipo</h5>
+                    <!-- <span>{{ statement.type }}</span> -->
+                </div>
+            </div>
+
+            <div class="modal-footer mt-3">
+                <button mat-dialog-close class="button bg-red">
+                    Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

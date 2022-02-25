@@ -12,11 +12,10 @@ import { UtilsService } from 'src/app/utils/utils.service';
     styleUrls: ['./singin.component.scss'],
 })
 export class SinginComponent implements OnInit {
-    formGroup!: FormGroup;
-    errors!: [];
+    formGroup: FormGroup;
 
     constructor(
-        private controller: AuthController,
+        private authController: AuthController,
         private router: Router,
         private toast: UtilsService
     ) {}
@@ -41,7 +40,7 @@ export class SinginComponent implements OnInit {
 
     async login() {
         try {
-            let response = await this.controller.login(
+            let response = await this.authController.login(
                 <Account>this.formGroup.value
             );
             localStorage.setItem('token', response.token);

@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { DetailComponent } from 'src/app/components/detail/detail.component';
 
 import { ModalComponent } from 'src/app/components/modal/modal.component';
 import { StatementController } from 'src/app/controllers/statements.controles';
@@ -68,6 +69,14 @@ export class AccountComponent implements OnInit, AfterViewInit {
                 operation: this.withdraw,
             },
         });
+
+        openModal.afterClosed().subscribe((result) => {
+            console.log('Fechado!!!');
+        });
+    }
+
+    openModalDetail() {
+        const openModal = this.modal.open(DetailComponent);
 
         openModal.afterClosed().subscribe((result) => {
             console.log('Fechado!!!');
