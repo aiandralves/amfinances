@@ -3,14 +3,14 @@
         <h2 class="modal-title">Detalhe do Extrado</h2>
 
         <div class="modal-content">
-            <div class="modal-detail">
+            <div class="modal-detail" *ngIf="statement">
                 <div class="modal-item">
                     <h5>Id</h5>
                     <span>{{ statement.id }}</span>
                 </div>
                 <div class="modal-item">
                     <h5>Name</h5>
-                    <!-- <span>{{ statement.account.name }}</span> -->
+                    <span>{{ account.name }}</span>
                 </div>
                 <div class="modal-item">
                     <h5>Titulo</h5>
@@ -22,7 +22,7 @@
                 </div>
                 <div class="modal-item">
                     <h5>Tipo</h5>
-                    <!-- <span>{{ statement.type }}</span> -->
+                    <span>{{ statement.type | titlecase }}</span>
                 </div>
             </div>
 

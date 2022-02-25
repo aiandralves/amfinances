@@ -33,7 +33,7 @@ export class AccountComponent implements OnInit, AfterViewInit {
         } catch (error: any) {
             this.toast.toast(error.error.message, true);
         } finally {
-            console.log('Encerrado!');
+            this.findBalance();
         }
     };
 
@@ -43,7 +43,7 @@ export class AccountComponent implements OnInit, AfterViewInit {
         } catch (error: any) {
             this.toast.toast(error.error.message, true);
         } finally {
-            console.log('ok');
+            this.findBalance();
         }
     };
 
@@ -75,8 +75,14 @@ export class AccountComponent implements OnInit, AfterViewInit {
         });
     }
 
-    openModalDetail() {
-        const openModal = this.modal.open(DetailComponent);
+    id: string;
+
+    openModalDetail(statement: Statement) {
+        const openModal = this.modal.open(DetailComponent, {
+            data: {
+                id: statement.id,
+            },
+        });
 
         openModal.afterClosed().subscribe((result) => {
             console.log('Fechado!!!');

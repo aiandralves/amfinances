@@ -1,5 +1,5 @@
 <mat-card-content class="content">
-    <div class="card-container">
+    <div class="card-container" *ngIf="homeData">
         <div class="card-item">
             <div class="card-info">
                 <h3>R$ {{ homeData.deposits }} </h3>
@@ -8,7 +8,7 @@
             <div class="card-icon">
                 <i class='bx bx-up-arrow-circle color-green'></i>
             </div>
-        </div>
+        </div><!-- end card -->
 
         <div class="card-item">
             <div class="card-info">
@@ -18,7 +18,7 @@
             <div class="card-icon">
                 <i class='bx bx-down-arrow-circle color-danger'></i>
             </div>
-        </div>
+        </div><!-- end card -->
 
         <div class="card-item">
             <div class="card-info">

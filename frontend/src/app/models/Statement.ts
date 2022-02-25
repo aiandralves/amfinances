@@ -4,20 +4,25 @@ export class Statement {
     id?: string;
     title?: string;
     amount?: number;
-    idaccount?: string;
+    type?: Type;
     account?: Account;
 
     constructor(
         id?: string,
         title?: string,
         amount?: number,
-        idaccount?: string,
+        type?: Type,
         account?: Account
     ) {
         this.id = id;
         this.title = title;
         this.amount = amount;
-        this.idaccount = idaccount;
+        this.type = type;
         this.account = account;
     }
+}
+
+enum Type {
+    DEPOSITO = 'deposito',
+    SAQUE = 'saque',
 }
