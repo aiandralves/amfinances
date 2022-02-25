@@ -9,8 +9,10 @@ import { SidebarComponent } from 'src/app/components/sidebar/sidebar.component';
 import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
 import { BreadcrumbComponent } from 'src/app/components/breadcrumb/breadcrumb.component';
 import { ModalComponent } from 'src/app/components/modal/modal.component';
+import { DetailComponent } from 'src/app/components/detail/detail.component';
 import { HomeComponent } from '../home/home.component';
 import { AccountComponent } from '../account/account.component';
+import { ProfileComponent } from '../profile/profile.component';
 
 @NgModule({
     declarations: [
@@ -19,8 +21,10 @@ import { AccountComponent } from '../account/account.component';
         NavbarComponent,
         BreadcrumbComponent,
         ModalComponent,
+        DetailComponent,
         HomeComponent,
         AccountComponent,
+        ProfileComponent,
     ],
     imports: [CommonModule, PainelRoutingModule, SharedModule],
 })

@@ -1,0 +1,62 @@
+<mat-card-content class="content">
+    <div class="transaction" id="transaction">
+        <!-- <h2 class="title">Perfil do Usuário</h2> -->
+
+        <div class="container">
+            <div class="row mt-3">
+                <div class="col-lg-4 col-xlg-3">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <img src="assets/img/avatar.jpg" class="card-img">
+                            <h4 class="card-title">{{ account.name }}</h4>
+
+                            <div class="row text-center justify-content-md-center">
+                                <div class="col-3">
+                                    <a href="https://www.linkedin.com/in/aiandralves" target="_blanck"
+                                        class="profile-icon">
+                                        <i class='bx bxl-linkedin'></i>
+                                    </a>
+                                </div>
+                                <div class="col-3">
+                                    <a href="https://www.instagram.com/aiandralves.web" target="_blanck"
+                                        class="profile-icon">
+                                        <i class='bx bxl-instagram'></i>
+                                    </a>
+                                </div>
+                                <div class="col-3">
+                                    <a href="https://github.com/aiandralves" target="_blanck" class="profile-icon">
+                                        <i class='bx bxl-github'></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div><!-- end col -->
+
+                <div class="col-lg-8 col-xlg-9">
+                    <div class="profile-content">
+                        <form action="" class="profile-form">
+                            <div class="form-box">
+                                <label class="form-label">Id</label>
+                                <input type="text" class="form-input" value="{{ account.id }}">
+                            </div>
+
+                            <div class="form-box">
+                                <label class="form-label">Nome</label>
+                                <input type="text" class="form-input" value="{{ account.name }}">
+                            </div>
+
+                            <div class="form-box">
+                                <label class="form-label">CPF</label>
+                                <input type="text" class="form-input" value="{{ account.cpf }}">
+                            </div>
+                        </form>
+                    </div>
+                </div><!-- end col -->
+
+            </div><!-- end row -->
+        </div>
+
+    </div>
+</mat-card-content>

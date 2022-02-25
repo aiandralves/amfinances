@@ -18,6 +18,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { AuthInterceptor } from '../guards/auth.interceptor';
 import { StatementController } from '../controllers/statements.controles';
 import { AuthController } from '../controllers/auth.controller';
+import { AccountController } from '../controllers/accounts.controller';
 
 const modules = [
     CommonModule,
@@ -37,7 +38,7 @@ const modules = [
     MatDialogModule,
 ];
 
-const providers = [AuthController, StatementController];
+const providers = [AuthController, StatementController, AccountController];
 
 @NgModule({
     declarations: [],

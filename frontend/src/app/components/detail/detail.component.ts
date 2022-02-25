@@ -17,7 +17,8 @@ export class DetailComponent implements OnInit {
 
     constructor(
         @Inject(MAT_DIALOG_DATA) public data: any,
-        private statementController: StatementController
+        private statementController: StatementController,
+        private toast: UtilsService
     ) {}
 
     ngOnInit(): void {
@@ -26,9 +27,13 @@ export class DetailComponent implements OnInit {
     }
 
     async findStatement() {
-        let statement = await this.statementController.findStatement(
-            this.data.id
-        );
-        this.statement = statement;
+        try {
+            let statement = await this.statementController.findStatement(
+                this.data.id
+            );
+            this.statement = statement;
+        } catch (error: any) {
+            this.toast.toast(error.error.message, true);
+        }
     }
 }

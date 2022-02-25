@@ -14,6 +14,7 @@ import { UtilsService } from 'src/app/utils/utils.service';
 })
 export class AccountComponent implements OnInit, AfterViewInit {
     balance: any;
+    id: string;
 
     constructor(
         private modal: MatDialog,
@@ -74,8 +75,6 @@ export class AccountComponent implements OnInit, AfterViewInit {
             console.log('Fechado!!!');
         });
     }
-
-    id: string;
 
     openModalDetail(statement: Statement) {
         const openModal = this.modal.open(DetailComponent, {
