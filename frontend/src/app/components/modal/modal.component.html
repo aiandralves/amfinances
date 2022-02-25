@@ -7,9 +7,19 @@
                 <div class="form-box">
                     <input formControlName="title" type="text" class="form-input" placeholder="Titulo">
                 </div>
+                <span class="text-alert"
+                    *ngIf="formGroup.get('title')?.errors?.required && (formGroup.get('title')?.dirty || formGroup.get('title')?.touched)">
+                    <p>Preencha o campo título</p>
+                </span>
+
                 <div class="form-box">
                     <input formControlName="amount" type="number" class="form-input" placeholder="Valor">
                 </div>
+                <span class="text-alert"
+                    *ngIf="formGroup.get('amount')?.errors?.required && (formGroup.get('amount')?.dirty || formGroup.get('amount')?.touched)">
+                    <p>Preencha o campo valor</p>
+                </span>
+
                 <div class="modal-footer mt-3">
                     <button mat-dialog-close class="button bg-red">
                         Cancelar

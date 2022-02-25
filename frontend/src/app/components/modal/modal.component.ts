@@ -1,10 +1,10 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { StatementController } from 'src/app/controllers/statements.controles';
 import { Statement } from 'src/app/models/Statement';
-import { UtilsService } from 'src/app/utils/utils.service';
 
 @Component({
     selector: 'app-modal',
@@ -22,7 +22,7 @@ export class ModalComponent implements OnInit {
     constructor(
         public statementController: StatementController,
         @Inject(MAT_DIALOG_DATA) public data: any,
-        private toast: UtilsService
+        private fb: FormBuilder
     ) {}
 
     ngOnInit(): void {
@@ -37,16 +37,10 @@ export class ModalComponent implements OnInit {
     }
 
     createForm() {
-        this.formGroup = new FormGroup({});
-
-        this.formGroup.addControl(
-            'title',
-            new FormControl('', Validators.required)
-        );
-        this.formGroup.addControl(
-            'amount',
-            new FormControl('', Validators.required)
-        );
+        this.formGroup = this.fb.group({
+            title: ['', Validators.required],
+            amount: ['', Validators.required],
+        });
     }
 
     buildStatement() {

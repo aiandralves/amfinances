@@ -5,7 +5,7 @@ import { CreateAccountUseCase } from './CreateAccountUseCase';
 
 export class CreateAccountController {
     async handler(req: Request, res: Response): Promise<Response> {
-        const { name, cpf, password } = req.body;
+        const { name, cpf, password, avatar } = req.body;
 
         const createAccount = container.resolve(CreateAccountUseCase);
 
@@ -13,6 +13,7 @@ export class CreateAccountController {
             name,
             cpf,
             password,
+            avatar,
         });
 
         return res.status(201).json(account);

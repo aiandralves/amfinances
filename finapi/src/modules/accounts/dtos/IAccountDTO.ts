@@ -7,5 +7,7 @@ export interface IAccountDTO {
 
     password?: string;
 
+    avatar?: string;
+
     token?: string;
 }

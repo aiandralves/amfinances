@@ -28,6 +28,9 @@ export class Account {
     @Column()
     password: string;
 
+    @Column()
+    avatar: string;
+
     @CreateDateColumn()
     created_at: Date;
 

@@ -60,6 +60,15 @@ button {
     color: #fff;
 }
 
+.text-alert {
+    text-align: left !important;
+
+    p {
+        color: var(--color-danger);
+        font-size: var(--font-small);
+    }
+}
+
 /**----------- Button ----------**/
 .button {
     padding: 1rem 2rem;

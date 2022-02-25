@@ -28,13 +28,13 @@ export class AuthAccountUseCase {
         const account = await this.accountRepository.findByCpf(cpf);
 
         if (!account) {
-            throw new AppError('CPF or Password incorrect!', 401);
+            throw new AppError('CPF ou Senha incorretos!', 401);
         }
 
         const passwdMatch = await compare(password, account.password);
 
         if (!passwdMatch) {
-            throw new AppError('CPF or Password incorrect!', 401);
+            throw new AppError('CPF ou Senha incorretos!', 401);
         }
 
         const { secret, expiresIn } = authConfig.jwt;

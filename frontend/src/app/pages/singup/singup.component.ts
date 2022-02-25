@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+    FormBuilder,
+    FormControl,
+    FormGroup,
+    Validators,
+} from '@angular/forms';
 import { Router } from '@angular/router';
+
+import { NgBrazilValidators } from 'ng-brazil';
+import { utilsBr } from 'js-brasil';
 
 import { AuthController } from 'src/app/controllers/auth.controller';
 import { Account } from 'src/app/models/Account';
@@ -12,12 +20,14 @@ import { UtilsService } from 'src/app/utils/utils.service';
     styleUrls: ['./singup.component.scss'],
 })
 export class SingupComponent implements OnInit {
-    formGroup: FormGroup;
+    formGroup: FormGroup = new FormGroup({});
+    MASKS = utilsBr.MASKS;
 
     constructor(
         private authController: AuthController,
         private router: Router,
-        private utils: UtilsService
+        private toast: UtilsService,
+        private fb: FormBuilder
     ) {}
 
     ngOnInit(): void {
@@ -25,30 +35,29 @@ export class SingupComponent implements OnInit {
     }
 
     createForm() {
-        this.formGroup = new FormGroup({});
-
-        this.formGroup.addControl(
-            'name',
-            new FormControl('', Validators.required)
-        );
-        this.formGroup.addControl(
-            'cpf',
-            new FormControl('', Validators.required)
-        );
-        this.formGroup.addControl(
-            'password',
-            new FormControl('', Validators.required)
-        );
+        this.formGroup = this.fb.group({
+            name: ['', Validators.required],
+            cpf: ['', [Validators.required, NgBrazilValidators.cpf]],
+            password: ['', Validators.required],
+            avatar: [''],
+        });
     }
 
     async createAccount() {
         try {
-            let account: Account = <Account>this.formGroup.value;
-            await this.authController.create(account);
-            this.utils.toast('Usuário cadastrado com sucesso!');
-            this.router.navigate(['/login']);
+            if (this.formGroup.dirty && this.formGroup.valid) {
+                let account: Account = <Account>this.formGroup.value;
+                await this.authController.create(account);
+                this.toast.toast('Usuário cadastrado com sucesso!');
+                this.router.navigate(['/login']);
+            } else {
+                this.toast.toast(
+                    'Campos nome, cpf e senha são obrigatórios',
+                    true
+                );
+            }
         } catch (error: any) {
-            this.utils.toast(error.error.message, true);
+            this.toast.toast(error.error.message, true);
         }
     }
 }

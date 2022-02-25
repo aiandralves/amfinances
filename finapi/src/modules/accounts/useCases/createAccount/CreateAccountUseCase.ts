@@ -14,11 +14,16 @@ export class CreateAccountUseCase {
         private accountRepository: IAccountRepository
     ) {}
 
-    async execute({ name, cpf, password }: IAccountDTO): Promise<Account> {
+    async execute({
+        name,
+        cpf,
+        password,
+        avatar,
+    }: IAccountDTO): Promise<Account> {
         const accountExist = await this.accountRepository.findByCpf(cpf);
 
         if (accountExist) {
-            throw new AppError('Account Already Exists!');
+            throw new AppError('Já possui uma conta com esse cpf!');
         }
 
         const passwdHash = await hash(password, 8);
@@ -27,6 +32,7 @@ export class CreateAccountUseCase {
             name,
             cpf,
             password: passwdHash,
+            avatar,
         });
 
         return account;

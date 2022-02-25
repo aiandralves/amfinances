@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
+import { NgBrazilValidators } from 'ng-brazil';
+import { utilsBr } from 'js-brasil';
 
 import { AuthController } from 'src/app/controllers/auth.controller';
 import { Account } from 'src/app/models/Account';
@@ -13,11 +16,13 @@ import { UtilsService } from 'src/app/utils/utils.service';
 })
 export class SinginComponent implements OnInit {
     formGroup: FormGroup;
+    MASKS = utilsBr.MASKS;
 
     constructor(
         private authController: AuthController,
         private router: Router,
-        private toast: UtilsService
+        private toast: UtilsService,
+        private fb: FormBuilder
     ) {}
 
     ngOnInit(): void {
@@ -25,17 +30,10 @@ export class SinginComponent implements OnInit {
     }
 
     private createForm() {
-        this.formGroup = new FormGroup({});
-
-        this.formGroup.addControl(
-            'cpf',
-            new FormControl('', Validators.required)
-        );
-
-        this.formGroup.addControl(
-            'password',
-            new FormControl('', Validators.required)
-        );
+        this.formGroup = this.fb.group({
+            cpf: ['', [Validators.required, NgBrazilValidators.cpf]],
+            password: ['', Validators.required],
+        });
     }
 
     async login() {

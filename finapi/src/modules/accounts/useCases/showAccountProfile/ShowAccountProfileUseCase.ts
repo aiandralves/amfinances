@@ -16,7 +16,7 @@ export class ShowAccountProfileUseCase {
         const account = await this.accountRepository.findById(idaccount);
 
         if (!account) {
-            throw new AppError('Account not Found!', 404);
+            throw new AppError('Conta não encontrada!', 404);
         }
 
         return account;

@@ -8,20 +8,37 @@
             <form action="" class="login-form" [formGroup]="formGroup">
                 <h1 class="login-title">Fazer Cadastro</h1>
 
-                <div class="login-box">
+                <div class="login-box mb-1">
                     <i class="bx bx-user login-icon"></i>
-                    <input required type="text" formControlName="name" placeholder="Nome Completo" class="login-input">
+                    <input type="text" formControlName="name" placeholder="Nome Completo" class="login-input">
                 </div>
+                <span class="text-alert"
+                    *ngIf="formGroup.get('name')?.errors && (formGroup.get('name')?.dirty || formGroup.get('name')?.touched)">
+                    <p>Preencha o campo nome</p>
+                </span>
 
                 <div class="login-box">
                     <i class="bx bx-at login-icon"></i>
-                    <input required type="text" formControlName="cpf" placeholder="CPF" class="login-input">
+                    <input cpf [textMask]="{ mask: MASKS.cpf.textMask }" type="text" formControlName="cpf"
+                        placeholder="CPF" class="login-input">
                 </div>
+                <span class="text-alert"
+                    *ngIf="formGroup.get('cpf')?.errors?.required && (formGroup.get('cpf')?.dirty || formGroup.get('cpf')?.touched)">
+                    <p>Preencha o campo CPF</p>
+                </span>
 
                 <div class="login-box">
                     <i class="bx bx-lock login-icon"></i>
-                    <input required type="password" formControlName="password" placeholder="Sua Senha"
-                        class="login-input">
+                    <input type="password" formControlName="password" placeholder="Sua Senha" class="login-input">
+                </div>
+                <span class="text-alert"
+                    *ngIf="formGroup.get('password')?.errors && (formGroup.get('password')?.dirty || formGroup.get('password')?.touched)">
+                    <p>Preencha o campo senha</p>
+                </span>
+
+                <div class="login-box">
+                    <i class='bx bx-link login-icon'></i>
+                    <input type="text" formControlName="avatar" placeholder="Link da sua foto" class="login-input">
                 </div>
 
                 <button (click)="createAccount()" type="submit" class="login-btn">Cadastrar</button>

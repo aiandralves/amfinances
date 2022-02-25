@@ -1,5 +1,7 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AccountController } from 'src/app/controllers/accounts.controller';
+import { Account } from 'src/app/models/Account';
 
 @Component({
     selector: 'app-navbar',
@@ -7,25 +9,28 @@ import { Router } from '@angular/router';
     styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-    name: string = '';
+    account: Account;
 
-    constructor(private router: Router) {}
+    constructor(
+        private router: Router,
+        private accountController: AccountController
+    ) {}
 
     @Output() toggle: EventEmitter<any> = new EventEmitter();
 
     ngOnInit(): void {
-        let account = localStorage.getItem('account') as string;
-        let response = JSON.parse(account);
-        this.name = this.getName(response.name);
+        this.findAccount();
+        this.account = JSON.parse(localStorage.getItem('account') as string);
     }
 
     toggleSidebar() {
         this.toggle.emit();
     }
 
-    private getName(name: string): string {
-        let names: string = name;
-        return names;
+    async findAccount() {
+        let account = await this.accountController.findAccount();
+        this.account.avatar = account.avatar;
+        this.account.name = account.name;
     }
 
     public logout() {

@@ -5,11 +5,11 @@
         </button>
 
         <div class="row mr-2 ml-auto">
-            <ul class="col-lg-12 m-0 align-items-center">
+            <ul class="col-lg-12 m-0 align-items-center" *ngIf="account">
                 <li>
                     <button mat-button [matMenuTriggerFor]="menu" class="user d-flex align-items-center">
-                        <img src="assets/img/avatar.jpg" alt="" class="user-img p-2" />
-                        {{ name }}
+                        <img src="{{ account.avatar }}" class="user-img p-2">
+                        {{ account.name }}
 
                         <i class='bx bx-chevron-down user-icon ml-1'></i>
                     </button>

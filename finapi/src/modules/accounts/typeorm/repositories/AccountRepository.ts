@@ -11,11 +11,17 @@ export class AccountRepository implements IAccountRepository {
         this.repository = getRepository(Account);
     }
 
-    async create({ name, cpf, password }: IAccountDTO): Promise<Account> {
+    async create({
+        name,
+        cpf,
+        password,
+        avatar,
+    }: IAccountDTO): Promise<Account> {
         const account = this.repository.create({
             name,
             cpf,
             password,
+            avatar,
         });
 
         return await this.repository.save(account);
