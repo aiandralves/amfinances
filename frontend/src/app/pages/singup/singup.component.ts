@@ -37,7 +37,7 @@ export class SingupComponent implements OnInit {
     createForm() {
         this.formGroup = this.fb.group({
             name: ['', Validators.required],
-            cpf: ['', [Validators.required, NgBrazilValidators.cpf]],
+            cpf: ['', Validators.required],
             password: ['', Validators.required],
             avatar: [''],
         });

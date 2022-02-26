@@ -52,12 +52,20 @@ button {
 /**------------ Base -----------**/
 .alert-success {
     background: var(--color-green) !important;
-    color: #fff;
+    color: #fff !important;
+
+    .mat-simple-snackbar-action {
+        color: #fff !important;
+    }
 }
 
 .alert-error {
     background: var(--color-danger) !important;
-    color: #fff;
+    color: #fff !important;
+
+    .mat-simple-snackbar-action {
+        color: #fff !important;
+    }
 }
 
 .text-alert {
@@ -96,4 +104,20 @@ button {
             color: #fff;
         }
     }
+}
+
+/***----------- Scroll Bar -----------***/
+
+::-webkit-scrollbar {
+    width: 0.4rem;
+    background-color: hsl(190, 12%, 90%);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: hsl(190, 12%, 75%);
+    border-radius: 4rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(190, 8%, 60%);
 }

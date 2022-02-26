@@ -59,10 +59,13 @@ table tbody tr button {
 
 .btn-details {
     background: none;
+    color: var(--color-main);
+    font-weight: 600;
 
     i {
         font-size: 1rem;
         vertical-align: middle;
+        font-weight: 600;
     }
 }
 

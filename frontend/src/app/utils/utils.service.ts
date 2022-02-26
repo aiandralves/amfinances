@@ -12,7 +12,7 @@ export class UtilsService {
         isError: boolean = false,
         duration: number = 3000
     ): Promise<void> {
-        this.snackBar.open(message, '', {
+        this.snackBar.open(message, 'x', {
             duration: duration,
             horizontalPosition: 'right',
             verticalPosition: 'top',

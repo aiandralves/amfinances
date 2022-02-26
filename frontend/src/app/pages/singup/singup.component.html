@@ -19,11 +19,11 @@
 
                 <div class="login-box">
                     <i class="bx bx-at login-icon"></i>
-                    <input cpf [textMask]="{ mask: MASKS.cpf.textMask }" type="text" formControlName="cpf"
-                        placeholder="CPF" class="login-input">
+                    <input [textMask]="{ mask: MASKS.cpf.textMask }" type="text" formControlName="cpf" placeholder="CPF"
+                        class="login-input">
                 </div>
                 <span class="text-alert"
-                    *ngIf="formGroup.get('cpf')?.errors?.required && (formGroup.get('cpf')?.dirty || formGroup.get('cpf')?.touched)">
+                    *ngIf="formGroup.get('cpf')?.errors && (formGroup.get('cpf')?.dirty || formGroup.get('cpf')?.touched)">
                     <p>Preencha o campo CPF</p>
                 </span>
 

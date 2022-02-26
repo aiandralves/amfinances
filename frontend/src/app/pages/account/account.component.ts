@@ -43,6 +43,7 @@ export class AccountComponent implements OnInit, AfterViewInit {
     deposit = async (controller: any, statement: Statement) => {
         try {
             await controller.deposit(statement);
+            this.toast.toast('Depósito cadastrado com sucesso!');
         } catch (error: any) {
             this.toast.toast(error.error.message, true);
         } finally {
@@ -53,6 +54,7 @@ export class AccountComponent implements OnInit, AfterViewInit {
     withdraw = async (controller: any, statement: Statement) => {
         try {
             await controller.withdraw(statement);
+            this.toast.toast('Saque cadastrado com sucesso!');
         } catch (error: any) {
             this.toast.toast(error.error.message, true);
         } finally {
