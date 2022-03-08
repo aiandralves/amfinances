@@ -8,7 +8,7 @@
 
 ## 💻 Projeto
 
-O AMFinances é um banco de transações. O usuário pode se cadastrar e efetuar transações como sacar dinheiro, realizar deposito e fazer transferência.
+O AMFinances é um banco de transações. O usuário pode se cadastrar e efetuar transações como sacar dinheiro, realizar deposito e apresentar os extratos.
 
 ## ✨ Tecnologias
 
@@ -28,9 +28,9 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 2. Instale as Dependências: `npm install` ou `yarn install`
 
-3. Execute as Migrations: `npm typeorm migrations:run` ou `yarn typeorm migrations:run`
+3. Execute as Migrations: `yarn typeorm migrations:run`
 
-4. Execute a API: `npm dev` ou `yarn dev`
+4. Execute a API: `yarn dev`
 
 Por fim, a aplicação estará disponível em `http://localhost:3333`
 
