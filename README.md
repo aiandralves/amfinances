@@ -1,9 +1,9 @@
 <div align="center">
-	<img src="" alt="Logo">
+	<h1>AMFinances 💰</h1>
 </div>
 
 <p align="center">
-    <img alt="Preview" src="">
+    <img alt="Preview" src="finapi/documents/finapi.gif">
 </p>
 
 ## 💻 Projeto
