@@ -3,7 +3,7 @@
 </div>
 
 <p align="center">
-    <img alt="Preview" src="finapi/documents/finapi.gif">
+    <img alt="Preview" src="finapi/documents/Finapi.gif">
 </p>
 
 ## 💻 Projeto
