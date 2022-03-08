@@ -50,4 +50,4 @@ Obs: Para testar o projeto disponibilizei os requests do Insomia na pasta docume
 
 ---
 
-Feito com ❤ por Aiandra Meira 👋🏻 &nbsp;[Portfólio Pessoal](https://aiandralves.com.br)
+Feito com ❤ por Aiandra Meira 👋🏻 &nbsp;[Portfólio Pessoal](http://www.aiandralves.com)
