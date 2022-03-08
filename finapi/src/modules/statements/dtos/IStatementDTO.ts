@@ -5,8 +5,6 @@ export interface IStatementDTO {
 
     idaccount: string;
 
-    idsender?: string;
-
     title: string;
 
     amount: number;
