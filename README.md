@@ -28,7 +28,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 2. Instale as Dependências: `npm install` ou `yarn install`
 
-3. Execute as Migrations: `yarn typeorm migrations:run`
+3. Execute as Migrations: `yarn typeorm migration:run`
 
 4. Execute a API: `yarn dev`
 
