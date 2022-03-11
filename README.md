@@ -8,7 +8,7 @@
 
 ## 💻 Projeto
 
-O AMFinances é um banco de transações. O usuário pode se cadastrar e efetuar transações como sacar dinheiro, realizar deposito e fazer transferência.
+O AMFinances é um banco de transações. O usuário pode se cadastrar e efetuar transações como sacar dinheiro, realizar deposito e apresentar os extratos.
 
 ## ✨ Tecnologias
 
